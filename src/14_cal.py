@@ -30,3 +30,24 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+# x = datetime.now()
+# print(x)
+# print(calendar.month(2017, 11))
+
+def durinsDay(month=None, year=None):
+  mm = datetime.now().month
+  yy = datetime.now().year
+  try:
+    if (month == None and year == None):
+      print(calendar.month(yy, mm))
+    elif (month != None and year == None):
+      print(calendar.month(yy, month))
+    elif (month != None and year != None):
+      print(calendar.month(year, month))
+  except TypeError:
+    print("Fool of a took! The Month and Year must be an integer!")
+
+durinsDay(4, 2017)
+
+
