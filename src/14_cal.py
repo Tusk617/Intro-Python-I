@@ -41,13 +41,14 @@ def durinsDay(month=None, year=None):
   try:
     if (month == None and year == None):
       print(calendar.month(yy, mm))
+      print("Fool of a took! The Month and Year must be an integer!")
     elif (month != None and year == None):
       print(calendar.month(yy, month))
     elif (month != None and year != None):
       print(calendar.month(year, month))
   except TypeError:
-    print("Fool of a took! The Month and Year must be an integer!")
+      print("Fool of a took! The Month and Year must be an integer!")
 
-durinsDay(4, 2017)
+durinsDay()
 
 
