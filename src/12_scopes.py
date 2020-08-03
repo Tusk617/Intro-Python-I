@@ -5,6 +5,7 @@
 x = 12
 
 def change_x():
+    global x #makes it so we can reference the defined global x, as opposed to a local x variable
     x = 99
 
 change_x()
@@ -19,6 +20,8 @@ def outer():
     y = 120
 
     def inner():
+        nonlocal y #Since the inner() function is within the outer(), it will have access to any defined variables  in outer()
+        #but using nonlocal allows us to use the newly defined variable as opposed to the previous
         y = 999
 
     inner()
