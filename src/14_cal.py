@@ -30,3 +30,28 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+# print(int(sys.argv[1]))
+# print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+
+
+mm = datetime.now().month
+yy = datetime.now().year
+
+if len(sys.argv) >= 3:
+  mm = int(sys.argv[1])
+  yy = int(sys.argv[2])
+elif len(sys.argv) == 2:
+  mm = int(sys.argv[1])
+  yy = datetime.now().year
+elif len(sys.argv) == 1:
+  mm = datetime.now().month
+  yy = datetime.now().year
+
+def durinsDay(month=mm, year=yy):
+  print(calendar.month(yy, mm))
+
+
+durinsDay()
+
+# print(len(sys.argv))
